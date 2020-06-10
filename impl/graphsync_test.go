@@ -18,20 +18,20 @@ import (
 
 	cidlink "github.com/ipld/go-ipld-prime/linking/cid"
 
+	chunker "github.com/TRON-US/go-btfs-chunker"
+	files "github.com/TRON-US/go-btfs-files"
+	unixfile "github.com/TRON-US/go-unixfs/file"
+	"github.com/TRON-US/go-unixfs/importer/balanced"
+	ihelper "github.com/TRON-US/go-unixfs/importer/helpers"
 	blocks "github.com/ipfs/go-block-format"
 	"github.com/ipfs/go-blockservice"
 	"github.com/ipfs/go-cid"
 	"github.com/ipfs/go-datastore"
 	dss "github.com/ipfs/go-datastore/sync"
 	bstore "github.com/ipfs/go-ipfs-blockstore"
-	chunker "github.com/TRON-US/go-btfs-chunker"
 	offline "github.com/ipfs/go-ipfs-exchange-offline"
-	files "github.com/TRON-US/go-btfs-files"
 	ipldformat "github.com/ipfs/go-ipld-format"
 	"github.com/ipfs/go-merkledag"
-	unixfile "github.com/TRON-US/go-unixfs/file"
-	"github.com/TRON-US/go-unixfs/importer/balanced"
-	ihelper "github.com/TRON-US/go-unixfs/importer/helpers"
 
 	"github.com/ipfs/go-graphsync"
 
@@ -692,7 +692,7 @@ func TestUnixFSFetch(t *testing.T) {
 	require.NoError(t, err, "should have been able to read received root node but didn't")
 
 	// Setup a UnixFS file reader
-	n, err := unixfile.NewUnixfsFile(ctx, dagService1, otherNode)
+	n, err := unixfile.NewUnixfsFile(ctx, dagService1, otherNode, unixfile.UnixfsFileOptions{})
 	require.NoError(t, err, "should have been able to setup UnixFS file but wasn't")
 
 	fn, ok := n.(files.File)
