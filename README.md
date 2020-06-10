@@ -1,13 +1,5 @@
 # go-graphsync
 
-[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
-[![](https://img.shields.io/badge/project-IPFS-blue.svg?style=flat-square)](http://ipfs.io/)
-[![Matrix](https://img.shields.io/badge/matrix-%23ipfs%3Amatrix.org-blue.svg?style=flat-square)](https://matrix.to/#/#ipfs:matrix.org)
-[![IRC](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
-[![Discord](https://img.shields.io/discord/475789330380488707?color=blueviolet&label=discord&style=flat-square)](https://discord.gg/24fmuwR)
-[![Coverage Status](https://codecov.io/gh/ipfs/go-graphsync/branch/master/graph/badge.svg)](https://codecov.io/gh/ipfs/go-graphsync/branch/master)
-[![Build Status](https://circleci.com/gh/ipfs/go-bitswap.svg?style=svg)](https://circleci.com/gh/ipfs/go-graphsync)
-
 > An implementation of the [graphsync protocol](https://github.com/ipld/specs/blob/master/block-layer/graphsync/graphsync.md) in go!
 
 ## Table of Contents
@@ -41,8 +33,8 @@ If your existing library (i.e. `go-ipfs` or `go-filecoin`) uses these other olde
 
 ```golang
 import (
-  graphsync "github.com/ipfs/go-graphsync/impl"
-  gsnet "github.com/ipfs/go-graphsync/network"
+  graphsync "github.com/TRON-US/go-graphsync/impl"
+  gsnet "github.com/TRON-US/go-graphsync/network"
   ipld "github.com/ipld/go-ipld-prime"
 )
 
@@ -70,9 +62,9 @@ integrating with BlockStore's from IPFS.
 
 ```golang
 import (
-  graphsync "github.com/ipfs/go-graphsync/impl"
-  gsnet "github.com/ipfs/go-graphsync/network"
-  storeutil "github.com/ipfs/go-graphsync/storeutil"
+  graphsync "github.com/TRON-US/go-graphsync/impl"
+  gsnet "github.com/TRON-US/go-graphsync/network"
+  storeutil "github.com/TRON-US/go-graphsync/storeutil"
   ipld "github.com/ipld/go-ipld-prime"
   blockstore "github.com/ipfs/go-ipfs-blockstore"
 )
@@ -160,7 +152,7 @@ type Storer func(lnkCtx LinkContext) (io.Writer, StoreCommitter, error)
 
 ```golang
 import (
-	blocks "github.com/ipfs/go-block-format"
+  blocks "github.com/ipfs/go-block-format"
   ipld "github.com/ipld/go-ipld-prime"
   cidLink "github.com/ipld/go-ipld-prime/linking/cid"
 )
@@ -231,4 +223,4 @@ Small note: If editing the Readme, please conform to the [standard-readme](https
 
 This library is dual-licensed under Apache 2.0 and MIT terms.
 
-Copyright 2019. Protocol Labs, Inc.
+Copyright 2020. TRON-US.
